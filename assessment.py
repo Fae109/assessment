@@ -54,7 +54,7 @@ def int_check(question):
         try:
             response = int(to_check)
 
-            if response < 1:
+            if response < 0:
                 print(error)
 
             else:
@@ -141,6 +141,10 @@ while rounds_played < num_rounds:
         if mode == "infinite":
            num_rounds += 1
 
+        if rounds_played == num_rounds:
+            end_game = "yes"
+            break
+
     except ValueError:
         print(error)
 
@@ -148,8 +152,7 @@ while rounds_played < num_rounds:
 
 
 # end loop
-if rounds_played == num_rounds:
-    end_game = "yes"
+
 
 # game stats
 if end_game == "yes":
