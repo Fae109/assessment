@@ -32,7 +32,7 @@ def instructions():
 
     print("""
 *** Instructions ***
-enter 000 to exit
+enter 999 to exit
 
     """)
 
@@ -54,9 +54,8 @@ def int_check(question):
         try:
             response = int(to_check)
 
-            if response < 0:
+            if response < 1:
                 print(error)
-
             else:
                 return response
 
@@ -124,7 +123,7 @@ while rounds_played < num_rounds:
             rounds_played += 1
             correct += 1
 
-        elif user_answer == 000:
+        elif user_answer == 999:
             print("over")
             end_game = "yes"
             break
