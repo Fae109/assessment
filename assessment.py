@@ -3,7 +3,7 @@ import random
 import math
 
 
-
+# see if user wants to see instructions
 def string_checker(question, valid_ans=("yes", "no")):
     error = f"pls enter a valid option from the following list: {valid_ans}"
 
@@ -36,7 +36,7 @@ enter 999 to exit
 
     """)
 
-
+# check to see if user put in a number above 0
 def int_check(question):
     """checks user enters an int more than or equal to 1"""
 
@@ -117,17 +117,19 @@ while rounds_played < num_rounds:
         answer = random_num2 + random_num1
         user_answer = int_check(f"{random_num1} + {random_num2} = ")
 
-
+        # tell user they are correct
         if user_answer == answer:
             feedback = ("correct")
             rounds_played += 1
             correct += 1
 
+        # end game
         elif user_answer == 999:
             print("over")
             end_game = "yes"
             break
 
+        # tell user they are incorrect
         else:
             feedback = (f"incorrect: answer is {answer}")
             rounds_played += 1
@@ -136,10 +138,11 @@ while rounds_played < num_rounds:
         round_feedback = (f"you are {feedback}")
         print(round_feedback)
 
-    # if
+    # if in infinite mode add another round 
         if mode == "infinite":
            num_rounds += 1
 
+        # finnish game
         if rounds_played == num_rounds:
             end_game = "yes"
             break
